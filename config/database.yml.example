@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  host: localhost
+  user: root
+  password:
+  database: story_development
+
+test:
+  adapter: mysql
+  encoding: utf8
+  host: localhost
+  user: root
+  password:
+  database: story_test
+
+# production:
+#   adapter: mysql
+#   encoding: utf8
+#   host: localhost
+#   user: root
+#   password:
+#   database: story_production
