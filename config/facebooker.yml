@@ -21,6 +21,20 @@ development:
     public_port: 4007
     local_port: 3000
     server_alive_interval: 0
+    
+dev:
+  api_key: 3942042591991b865e4fe5208b18a1a8
+  secret_key: a27ee47f5216e1a9f7806dcc4962153f
+  canvas_page_name: 
+  callback_url: http://story.dearstudio.com/
+  pretty_errors: true
+  set_asset_host_to_callback_url: true
+  tunnel:
+    public_host_username: 
+    public_host: 
+    public_port: 4007
+    local_port: 3000
+    server_alive_interval: 0
 
 test:
   api_key: 

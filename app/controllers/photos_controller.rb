@@ -19,9 +19,9 @@ class PhotosController < ApplicationController
         srcs = value[:src].split(',')
         begin
           if photo = Photo.create(:user_id => current_user.id, 
-                       :fb_user_id => facebook_session.user.uid.to_s,
-                       :fb_pid => key,
-                       :fb_aid => params[:aid],
+                       :fb_user_id => facebook_session.user.uid,
+                       :fb_pid => key.to_i,
+                       :fb_aid => params[:aid].to_i,
                        :src_small => srcs[0],
                        :src_big => srcs[1])
             @story.photos << photo 

@@ -13,9 +13,9 @@ ActiveRecord::Schema.define(:version => 20100402182455) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
-    t.string   "fb_user_id"
-    t.string   "fb_pid"
-    t.string   "fb_aid"
+    t.integer  "fb_user_id", :limit => 8
+    t.integer  "fb_pid",     :limit => 8
+    t.integer  "fb_aid",     :limit => 8
     t.string   "src_small"
     t.string   "src_big"
     t.datetime "created_at"

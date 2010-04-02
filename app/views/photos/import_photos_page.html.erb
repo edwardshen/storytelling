@@ -42,7 +42,7 @@
     <div class='import_photo_container'>
       <div class='image'><%= image_tag photo.src_small %></div>
       <% pids = @story.photos.map {|p| p.fb_pid} %>
-      <%- if pids.include?(photo.pid) -%>
+      <%- if pids.include?(photo.pid.to_i) -%>
       <div class='label'>Imported</div>
       <%- else -%>
       <div class='label checkbox'>
