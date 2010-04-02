@@ -21,7 +21,7 @@ role :db, domain, :primary => true
 # Application
 #############################################################
 
-set :application, "yuin-dev"
+set :application, "story-dev"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 
 #############################################################
@@ -43,7 +43,7 @@ set :keep_releases, 5
 
 set :scm, :git
 set :branch, "master"
-set :repository, "git@dearstudio.com:/home/git/repositories/yuin-code.git"
+set :repository, "git@dearstudio.com:/home/git/repositories/story-code.git"
 set :deploy_via, :remote_cache
 # If you have public like github.com then use :remote_cache
 # set :deploy_via, :copy  # if you server does NOT have direct access to the repository (default)  
