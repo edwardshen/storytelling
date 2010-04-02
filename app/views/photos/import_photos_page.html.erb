@@ -1,0 +1,64 @@
+<% content_for :head do -%>
+  <script type='text/javascript'>
+     //window.resizeTo(820,600);
+  </script>
+<% end -%>
+<div class='header'>
+  <div class='basic_info'>
+    <h1 class='title'>Import Photos <%=h "from #{params[:aname]}" unless params[:aname].blank? %></h1>
+    <p class="description"></p>
+  </div>
+
+  <div class='actions'>
+    <%= link_to 'Back to album list', import_photos_page_story_photos_path(@story) %>
+  </div>
+  <div class='clear_fix'></div>
+</div>
+
+<%- if params[:aid].blank? -%>
+  <%- albums = facebook_session.user.albums -%>
+  <%- if !albums.blank? -%>
+    <%- for album in albums -%>
+    <div class='album'>
+      <h2><%= link_to album.name, import_photos_page_story_photos_path(@story, :aid => album.aid, :aname => album.name) %></h2>
+      <%- cover_photo = get_cover_photo(album.cover_pid)-%>
+      <div class="cover_photo"><%= image_tag cover_photo.src_small if cover_photo %></div>
+    </div>
+    <%- end -%>
+  <%- else -%>
+  
+  <%- end -%>
+<%- else -%>
+  <%- if @album_photos.blank? -%>
+    No Photos
+  <%- else -%>
+    <%= form_tag import_photos_story_photos_path(@story, :aid => params[:aid]) %>
+    <%- for photo in @album_photos -%>
+    
+    <%- if @album_photos.index(photo) % 7 == 0  -%>
+    <div class="photo_row">
+    <%- end -%>
+    
+    <div class='import_photo_container'>
+      <div class='image'><%= image_tag photo.src_small %></div>
+      <% pids = @story.photos.map {|p| p.fb_pid} %>
+      <%- if pids.include?(photo.pid) -%>
+      <div class='label'>Imported</div>
+      <%- else -%>
+      <div class='label checkbox'>
+        <%= check_box_tag "photo_ids[#{photo.pid}][src]", "#{photo.src_small},#{photo.src_big}" %></div>
+      <%- end -%>
+    </div>
+    
+    <%- if @album_photos.index(photo) % 7 == 6 or  @album_photos.last == photo -%>
+    <div class='clear_fix'></div>
+    </div>
+    <%- end -%>
+    
+    <%- end -%>
+    <div class='form_row'>
+      <%= submit_tag 'Import' %>
+    </div>
+  <%- end -%>
+  
+<%- end -%>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title><%= h(yield(:title) || "Storytelling") %></title>
+    <%= stylesheet_link_tag 'public', :cache => false %>
+    <%= yield(:head) %>
+  </head>
+  <body>	
+    <div id="container_wrap">
+      <div id="container">
+        <div id="header_wrap">
+          <div id="header">
+            <div id="logo"><%= link_to 'Storytelling', root_url %></div>            
+            <%= render :partial => "shared/login_box" %>
+            <div class="clear_fix"></div>
+          </div>
+        </div>
+        <div id="main_wrap">
+          <div id="main">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+	  
+    <%= fb_connect_javascript_tag %>
+    <%= javascript_include_tag 'jquery', :cache => true %>
+    <%= init_fb_connect "XFBML", :js => :jquery %>
+  </body>
+</html>

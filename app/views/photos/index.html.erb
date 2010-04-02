@@ -1,0 +1,21 @@
+<div class='header'>
+  <div class='basic_info'>
+    <h1 class='title'>Photo Pool</h1>
+    <p class="description"></p>
+  </div>
+
+  <div class='actions'>
+    <%= link_to 'Import photos', import_photos_page_story_photos_path(@story), 
+                :target => '_blank' %> |
+    <%= link_to 'Back to story', story_path(@story) %>
+  </div>
+  <div class='clear_fix'></div>
+</div>
+
+<%- if !@photos.blank? -%>
+  <%- for photo in @photos -%>
+    <%= image_tag photo.src_small %>
+  <%- end -%>
+<%- else -%>
+  No Photos
+<%- end -%>

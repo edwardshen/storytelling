@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  fb_user_id: 1
+  fb_pid: 1
+  src_small: MyString
+  src_big: MyString
+
+two:
+  user_id: 1
+  fb_user_id: 1
+  fb_pid: 1
+  src_small: MyString
+  src_big: MyString

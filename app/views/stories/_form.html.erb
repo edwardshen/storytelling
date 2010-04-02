@@ -1,0 +1,34 @@
+<% form_for @story do |f| -%>
+  <div class="form_row">
+    <div class="label"><%= f.label :title, "Title" %></div>
+    <div class="field"><%= f.text_field :title %></div>
+    <div class="clear_fix"></div>
+  </div>
+  
+  <div class="form_row">
+    <div class="label"><%= f.label :description, "Description" %></div>
+    <div class="field"><%= f.text_area :description %></div>
+    <div class="clear_fix"></div>
+  </div>
+  
+  <div class="form_row">
+    <div class="label">Invitation</div>
+    <div class="field">
+      <div class="fb_friends">
+        <%- for friend in facebook_session.user.friends!(:name, :pic_square)[0..50] do -%>
+        <div class="fb_friend">
+          <span class='image'><%= image_tag friend.pic_square if friend.pic_square %></span>
+          <span class='name'><%= friend.name %></span>
+          <span class='checkbox'><%= check_box_tag "friend_ids[]", "#{friend.uid}",
+                    @story.user_ids.include?(friend.uid) %></span>
+          <div class="clear_fix"></div>
+        </div>
+        <%- end -%>
+        <div class="clear_fix"></div>
+      </div>
+    </div>  
+    <div class="clear_fix"></div>
+  </div>
+  
+  <%= f.submit "Save", :disable_with => 'Saving...' %> or <%= link_to 'cancel', :back %>
+<% end -%>

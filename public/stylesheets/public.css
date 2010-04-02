@@ -1,0 +1,211 @@
+/* Reset 
+--------------------*/
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 13px Arial, Helvetica, Garuda, sans-serif;
+  *font-size: small;
+  *font: x-small;
+}
+h1, h2, h3, h4, h5, h6, ul, li, em, strong, pre, code {
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+}
+table {
+  font-size: inherit;
+  font: 100%;
+}
+ul {
+  list-style: none;
+}
+img {
+  border: 0;
+}
+p {
+  margin: 1em 0;
+}
+a {
+  color: #29ABE2;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+#container_wrap {
+  padding: 0 10px;
+}
+
+#header_wrap {
+  text-align: center;
+  margin: 10px 0 0;
+}
+  #header {
+    text-align: left;
+    margin: 20px auto 20px;
+    padding: 0 0 10px 0;
+    position: relative;
+    width: 800px;
+    border-bottom: 2px solid #ccc;
+  }
+    #logo {
+      float: left;
+      font-size: 20px;
+    }
+    #login_box {
+      float: right;
+      font-size: 14px;
+    }
+      #login_box .greeting {
+        float: left;
+        margin: 0 15px 0 0;
+        padding: 0 15px 0 0;
+        border-right: 1px solid #333;
+      }
+      #login_box .actions {
+        float: left;
+      }
+
+#main_wrap {
+  text-align: center;
+  margin: 10px 0 0;
+  overflow: hidden;
+}
+  #main {
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+    width: 800px;
+  }
+    /*
+    #main #sidebar {
+      text-align: left;
+      margin: 0 20px 0 0;
+      padding: 0 8px 0 0;
+      float: left;
+      width: 130px;
+      border-right: 1px solid #ccc;
+      min-height: 300px;
+      height: auto !important;
+      height: 300px;
+    }
+    #main #main_view {
+      text-align: left;
+      margin: 0;
+      float: left;
+      width: 800px;
+    }
+    */
+
+/* Stories
+-------------------- */
+.header {
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 10px 0;
+}
+  .header .basic_info {
+    float: left;
+    width: 500px;
+  }
+    .basic_info .title {
+      font-size: 1.3em;
+    }
+    .basic_info .description {
+      color: #999;
+      margin: 5px 0 10px 0;
+    }
+  
+  .header .actions {
+    float: right;
+  }
+
+/* Photo
+-------------------- */
+.photo_row {
+  min-height: 100px;
+}
+
+.import_photo_container {
+  float: left;
+  margin: 0 10px 10px 0;
+  height: 150px;
+  position: relative;
+}
+  .import_photo_container .image {
+    width: 75px;
+    padding: 5px;
+    border: 1px solid #eee;
+  }
+  .import_photo_container .label {
+    position: absolute;
+    bottom: 0;
+    background-color: #333333;
+    color: #FFFFFF;
+    opacity: 0.7;
+    padding: 0px 3px;
+    width: 82px;
+    height: 20px;
+    line-height: 20px;
+  }
+  
+.album {
+  margin: 0 0 10px 0;
+}
+
+/* Form
+-------------------- */
+.form_row {
+  margin: 0 0 10px 0;
+}
+  .form_row .label {
+    float: left;
+    width: 100px;
+  }
+  .form_row .field {
+    float: left;
+    width: 615px;
+  }
+  
+.fb_friends {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #aaa;
+}
+  .fb_friend {
+    float: left;
+    width: 138px;
+    padding: 5px;
+    position: relative;
+  }
+  .fb_friend:hover {
+    background-color: #eee;
+  }
+    .fb_friend .image {
+      display: block;
+      float: left;
+      height: 50px;
+      margin: 0 5px 0 0;
+    }
+    .fb_friend .name {
+      display: block;
+      float: left;
+      width: 83px;
+      height: 50px;
+      overflow: hidden;
+    }
+    .fb_friend .checkbox {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  
+/* Misc
+-------------------- */
+.clear_fix {
+  clear: both;
+}

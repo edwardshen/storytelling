@@ -1,0 +1,16 @@
+<div id="single_story_container">
+  <div class='header'>
+    <div class='basic_info'>
+      <h1 class='title'><%=h @story.title %></h1>
+      <p class="description"><%= @story.description %></p>
+    </div>
+  
+    <div class='actions'>
+      <%= link_to 'Photo Pool', story_photos_path(@story) %> |
+      <%= link_to 'Edit', edit_story_path(@story) %> |
+      <%= link_to 'Delete', story_path(@story), :method => :delete, :confirm => 'Are you sure?' %>
+    </div>
+    <div class='clear_fix'></div>
+  </div>
+
+</div>

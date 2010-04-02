@@ -1,0 +1,29 @@
+<div class='header'>
+  <div class='basic_info'>
+    <h1 class='title'>Stories</h1>
+    <p class="description"></p>
+  </div>
+
+  <div class='actions'>
+    <%= link_to 'Add a new story', new_story_path %>
+  </div>
+  <div class='clear_fix'></div>
+</div>
+
+<%- if !@stories.blank? -%>
+  <%- for story in @stories -%>
+    <div class='story'>
+      <span><%= link_to story.title, story_path(story) %></span>
+    </div>
+  <%- end -%>
+<%- else -%>
+  
+<%- end -%>
+
+<!--
+<h2>stories you created</h2>
+
+<h2>stories you updated</h2>
+
+<h2>stories you involved</h2>
+-->

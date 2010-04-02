@@ -1,0 +1,17 @@
+<div id="login_box">
+<%- if logged_in? -%>
+  <div class="greeting">Hi, <%= link_to current_user.name, user_path(current_user) %></div>
+  <%- if current_user.facebook_user? -%>
+  <!--
+  <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+  -->
+  <div class="actions"><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></div>
+  <%- else -%>
+  <div class="greeting">why don't you connect with your facebook account</div>
+  <%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+  <div class="actions"><%= link_to 'Logout', logout_path %></div>
+  <%- end -%>
+<%- else -%>
+  <div class="actions"><%= link_to 'Signup', signup_path %> or <%= link_to 'Login', login_path %></div>
+<%- end -%>
+</div>

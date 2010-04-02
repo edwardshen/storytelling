@@ -1,4 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => 'stories'
+  
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  
+  map.resources :users, :collection => { :link_user_accounts => :get }
+  map.resources :stories do |story|
+    story.resources :photos, :collection => { :import_photos_page => :get, :import_photos => :post }
+  end
+  
+  map.resource :session
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
